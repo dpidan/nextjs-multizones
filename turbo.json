@@ -1,0 +1,36 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/master",
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": [
+        "$USE_PROXY"
+      ]
+    },
+    "dev:proxy": {
+      "cache": false,
+      "dependsOn": [
+        "$USE_PROXY"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "$USE_PROXY",
+        "^build"
+      ]
+    }
+  },
+  "globalDependencies": [
+    ".env"
+  ]
+}

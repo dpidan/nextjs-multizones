@@ -1,0 +1,17 @@
+{
+  "name": "@dpidan/multi-app-proxy",
+  "version": "0.1.0",
+  "description": "Reverse-proxy wrapper for hosting microsites from Node",
+  "author": "Daniel Peterson <dpidans@gmail.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run start",
+    "dev:proxy": "USE_PROXY=true yarn run dev",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}
