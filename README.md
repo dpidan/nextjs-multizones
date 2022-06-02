@@ -1,6 +1,7 @@
 # Next.js Multi Zones Demo
 
 An example of a Next.js Multi Zones site in a monorepo using [TurboRepo](https://turborepo.org/) to concurrently build and run.
+Includes custom `Link` component to strip basePath from hrefs that may come from shared sources.
 
 ## Requirements
 
@@ -41,5 +42,5 @@ yarn build
 
 ## To Do
 
-- Finish setting up alternative proxy wrapper app so so we don't have to use Next.js `basePath` for sibling apps.
+- Provide custom `Router` and `useRouter` to handle stripping of basePath from shared links.
 - *See various TODOs in code
