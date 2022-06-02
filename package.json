@@ -1,0 +1,24 @@
+{
+  "name": "@dpidan/nextjs-multizones",
+  "version": "0.1.0",
+  "description": "Next.js multi-zone demo for concurrent local dev",
+  "author": "Daniel Peterson <dpidans@gmail.com>",
+  "private": true,
+  "engines": {
+    "node": ">=12.22.0",
+    "npm": ">=6.4.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn turbo run build",
+    "dev": "yarn turbo run dev",
+    "dev:proxy": "USE_PROXY=true yarn turbo run dev:proxy",
+    "start": "yarn turbo run start"
+  },
+  "devDependencies": {
+    "turbo": "^1.2.8"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
