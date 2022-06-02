@@ -1,8 +1,6 @@
 const dotenv = require('dotenv').config({ path: '../../.env' });
 
-const { APP_URL_ACCOUNT, APP_URL_CHECKOUT, PORT, USE_PROXY } = process.env
-
-console.log('Main app:', { APP_URL_CHECKOUT, PORT, USE_PROXY });
+const { APP_HOST_CHECKOUT, PORT, USE_PROXY } = process.env
 
 module.exports = {
   rewrites() {
@@ -13,19 +11,11 @@ module.exports = {
       },
       {
         source: '/checkout',
-        destination: `${APP_URL_CHECKOUT}/checkout`,
+        destination: `${APP_HOST_CHECKOUT}/checkout`,
       },
       {
         source: '/checkout/:path*',
-        destination: `${APP_URL_CHECKOUT}/checkout/:path*`,
-      },
-      {
-        source: '/account',
-        destination: `${APP_URL_ACCOUNT}/account`,
-      },
-      {
-        source: '/account/:path*',
-        destination: `${APP_URL_ACCOUNT}/account/:path*`,
+        destination: `${APP_HOST_CHECKOUT}/checkout/:path*`,
       },
     ];
   }
